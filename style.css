@@ -1,0 +1,50 @@
+body {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+  }
+  
+  .container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(135deg, #ff4d4d, #ffcc00, #4dff4d, #4d4dff, #ff00ff, #00ffff);
+    background-size: 200% 200%;
+    border-radius: 30px;
+    z-index: 0;
+    animation: glowAnimation 6s ease-in-out infinite;
+    filter: blur(20px);
+  }
+  
+  @keyframes glowAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
